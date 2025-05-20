@@ -1,0 +1,26 @@
+erDiagram
+    SoilType {
+        int id PK
+        varchar name
+    }
+    Disease {
+        int id PK
+        varchar name
+    }
+    SoilAnalysis {
+        int id PK
+        int soil_type_id FK
+        float soil_pH
+        float temperature
+        float humidity
+        float organic_carbon
+        float sodium
+        float potassium
+        float nitrogen
+        float phosphorus
+        varchar Soil_Quality
+        int disease_id FK
+    }
+
+    SoilAnalysis }o--|| SoilType : uses
+    SoilAnalysis }o--|| Disease : detects
